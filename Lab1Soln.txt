@@ -1,0 +1,102 @@
+//Since No programming is involved in the first lab sheet
+//the solution for the same is only a .txt file containing terminal commands
+//required to produce the desired output
+//There are answers to the "REVIEW QUESTIONS" at the end of this file as well
+
+% cd Desktop 
+% mkdir BITS
+% cd BITS
+% mkdir Pilani Hyderabad Goa
+% cd Pilani
+% mkdir P_Dept
+% cd P_Dept 
+% mkdir CSIS ECE
+% cd ..
+% cd ..
+% cd Hyderabad 
+% mkdir H_Dept
+% cd H_Dept
+% mkdir Mech IE
+% cd ..
+% cd ..
+% cd Goa
+% mkdir G_Dept
+% mkdir Phy Chem
+% rm -r Phy
+% rm -r Chem
+% cd G_Dept 
+% mkdir Phy Chem
+% cd ..
+% cd ..
+% cd Pilani/P_Dept/ECE 
+% cat > f2.txt <<EOF
+heredoc> Name1
+heredoc> Name2
+heredoc> Name3
+heredoc> Name4
+heredoc> Name5
+heredoc> Name6
+heredoc> Name7
+heredoc> Name8
+heredoc> Name9
+heredoc> Name10
+heredoc> EOF
+(base) apple@Vedangs-MacBook-Air-2 ECE % cp /Users/apple/Desktop/BITS/Pilani/P_Dept/ECE/f2.txt /Users/apple/Desktop/BITS/Hyderabad/H_Dept/Mech/f4.txt
+(base) apple@Vedangs-MacBook-Air-2 ECE % tail -n +4 /Users/apple/Desktop/BITS/Hyderabad/H_Dept/Mech/f4.txt
+Name4
+Name5
+Name6
+Name7
+Name8
+Name9
+Name10
+(base) apple@Vedangs-MacBook-Air-2 ECE % rm -r /Users/apple/Desktop/BITS/Pilani/P_Dept/ECE
+
+
+
+REVIEW QUESTIONS.
+
+1. What is the effect of typing cd ~ on your terminal? What is your working directory after
+executing this command?
+
+It changes your working directory to the home directory. Your home directory is now your working directory.
+
+2. What is the difference between mkdir and mkdir with –p flag?
+Key differences:
+
+Parent directories:
+
+mkdir fails if parent directories don't exist.
+mkdir -p creates all necessary parent directories.
+
+Existing directories:
+
+mkdir gives an error if the directory exists.
+mkdir -p silently continues if the directory exists.
+
+Nested structures:
+
+mkdir can't create nested structures in one command.
+mkdir -p can create complex nested structures in one go.
+
+3. How does the rm command differ from rmdir command? What is the use of rm –r?
+
+rm Command
+Purpose: The rm (remove) command is used to delete files and directories.
+rm -r
+Purpose: The rm -r command combines the rm command with the -r (recursive) option.
+rm -r dirname will remove the directory named dirname and all its contents, including subdirectories and files.
+
+
+4. Given files f1 and f2, how can you create a new file f3 with the contents of f1 followed
+by contents of f2? (note: this requires some exploration beyond the contents of this lab
+sheet)
+
+First Concatenate f1 and f2
+"cat  f1.txt f2.txt"
+Redirect the output to f3
+"cat f1.txt f2.txt > f3.txt"
+
+
+
+
