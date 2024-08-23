@@ -1,0 +1,129 @@
+[[NO PROGRAMMING IS INVOLVED IN LAB SHEET 2 HENCE THE SOLUTION INVOLVES  ONLY A TXT FILE CONTAINING A WALKTHROUGH OF THE TERMINAL COMMANDS BEING COVERED AND TASK OF LAB SHEET 2]]
+
+
+% grep "this" demo.txt
+this line is the 1st lower case line in this file.
+Two lines above this line is empty.
+And this is the last line.
+
+grep -i "this" demo.txt
+THIS LINE IS THE 1ST UPPER CASE LINE IN THIS FILE.
+this line is the 1st lower case line in this file.
+This Line Has All Its First Character Of The Word
+Two lines above this line is empty.
+And this is the last line.
+
+% grep -v "this" demo.txt
+THIS LINE IS THE 1ST UPPER CASE LINE IN THIS FILE.
+This Line Has All Its First Character Of The Word
+With Upper Case.
+
+% grep -c "this" demo.txt
+3
+
+% grep -o "this" demo.txt
+this
+this
+this
+this
+
+grep -v: Return lines that don't match the pattern.
+grep -c: Return the count of matching lines.
+grep -o: Return only the matching portions of the line.
+
+----------------------------
+SOLN TO TASK:
+1. How do you make the system print out the name of your home directory?
+
+echo ~
+OR echo $HOME
+
+2. What is the parent directory of your home directory?
+% echo $HOME
+
+/Users/Vedang
+
+In this case my home directory is "Vedang" and it's parent directory also the root directory is "Users"
+
+3. Make a directory called dir1 under your home directory.
+a) Change to this directory.
+b) Make three empty files: file1 file2 and file3 under the current directory.
+(You can either use the touch command or the cat > filename operator. Try both
+options.)
+c) Make a sub-directory called dir1-1 under the current directory.
+
+first navigate to the home directory using "cd ~" [Lab sheet 1]
+then:
+mkdir dir1
+cd dir1
+touch file1 file2 file3
+mkdir dir1-1
+
+4. Draw the file structure of the existent files and directories under your home directory.
+home directory : Vedang
+                            Vedang
+                              |
+                              |
+                            dir1
+                      ________|_______________
+                      |       |        |      |
+                      dir1-1  file1  file2    file3
+
+5. Remove the subdirectory dir1-1.
+rmdir dir1-1 (when present working directory is dir1)
+
+6. Try now removing dir1
+cd ..
+rmdir dir1
+[FAILS because dir1 is not empty]
+[to delete recursively or to delete a directory that is not empty along with the contents inside of it use rm -r "dir name"]
+
+
+rm -r dir1 
+[present working dir is root dir]
+
+
+7. Store the list of all the files and directories (using ls long listing) in a file called dirfile.
+ls -l > dirfile
+
+8. Display the contents of dirfile on the screen using the cat command
+cat dirfile
+
+9. Store in a file called userlist the list of users who are currently logged into the system
+who > userlist
+
+10. Combine the contents of dirfile and userlist and store in the file called file1
+cat dirfile userlist > file1
+
+11. Print the number of lines, words and characters in file1 using the wc command
+wc file1
+
+12. Copy the contents of file1 into file2.
+cp file1 file2
+
+13. Append the following two lines into file2:
+This is file2.
+And I am using Linux!
+
+echo "This is file2." >> file2
+echo "And I am using Linux!" >> file2
+
+
+
+
+
+                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
